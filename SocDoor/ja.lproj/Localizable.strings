@@ -1,0 +1,91 @@
+/* 
+  Localizable.strings
+  SocDoor
+
+  Created by Hirose Manabu on 2021/02/12.
+  
+*/
+
+ToS_Title = "利用規約";
+ToS_Agree = "同意する";
+
+Message_Copied_to_clipboard = "クリップボードにコピーしました。";
+Message_Cellurar_is_disabled = "モバイル通信が無効です。";
+Message_No_backend_hosts_found = "バックエンドのホストが見つかりません。";
+Message_OK = "OK";
+Message_NotSupport = "現在のバージョンではサポートされていません。";
+Message_NoValue = "値が入力されていません。";
+Message_NoFilter = "許可アドレスが一つも指定されていません。";
+Message_InvalidValue = "不正な値です。";
+Message_InvalidIndex = "不正な識別子です。";
+Message_InvalidIpAddr = "不正な IP アドレス形式です。";
+Message_InvalidSuffix = "不正な接尾辞（suffix）です。";
+Message_InvalidPort = "不正なポートです。";
+Message_AlreadyAddressExist = "既に同じアドレスが登録されています。";
+Message_AddressExceeded = "アドレス登録数の上限に達しました。";
+Message_CantUseIpAddr = "当該 IP アドレスは使用できません。";
+Message_FailedHealthCheck = "ヘルスチェックに失敗しました。";
+Message_CantOpenURL = "インターネットのサイトを開くことができません。";
+Message_default = "内部矛盾エラーです。";
+
+Button_Start = "開始する";
+Button_Stop = "停止する";
+Button_Register = "登録する";
+Button_Reload = "更新する";  // no use
+Button_Reload2 = "更新";
+Button_Copy = "コピーする";  // no use
+Button_Copy2 = "コピー";
+Button_Clear = "消去する";  // no use
+Button_Clear2 = "消去";
+
+Description_Open = "バックドアを開く";
+Description_Close = "バックドアを閉じる";
+Description_New_Filter = "新しいフィルターを作成する";
+Description_App_Settings = "アプリの動作設定および画面設定を変更する";
+Description_Trace_Log = "システムコールトレース情報を表示する";
+Description_Access_Log = "アクセスログを表示する";
+Description_About_App = "アプリのバージョン情報";
+Description_Privacy_Policy = "アプリのプライバシーポリシー（外部インターネットサイト）";
+Description_Terms_of_Service = "アプリの利用規約（外部インターネットサイト）";
+
+Label_IP_address = "IP アドレス";
+Label_Port_number = "ポート番号";
+Label_Allow_address = "許可アドレス";
+Label_Certificate = "証明書";
+Label_byte = "バイト";
+Label_bytes = "バイト";
+Label_Connections = "接続数: ";
+Label_Access_Allow = "[A]許可: ";
+Label_Access_Deny = "[D]拒否: ";
+Label_Access_Error = "[E]エラー: ";
+Label_Cellurar_Data_Total = "モバイルデータ通信（合計）: ";
+Label_Cellurar_Data = "モバイルデータ通信: ";
+Label_Start_Date = "開始日時: ";
+Label_Enabled = "有効にする";
+Label_Disabled = "無効にする";
+Label_Inverted = "反転させる";
+Label_TRACE_Level1 = "レベル 1";
+Label_TRACE_Level2 = "レベル 2";
+Label_TRACE_Level3 = "レベル 3";
+
+Header_PROTOCOL = "プロトコル";
+Header_FRONT-END = "フロントエンド";
+Header_BACK-END = "バックエンド";
+Header_FILTER_LIST = "フィルター一覧";
+Header_FILTER = "フィルター";
+Header_DOOR_SERVER = "ドアサーバー";
+Header_SESSIONS = "セッション";
+Header_PREFERENCES = "環境設定";
+Header_LOG = "ログ";
+Header_INFORMATION = "情報";
+
+Footer_PROTOCOL = "TCP-TCP: フロントエンドで受信した任意のデータをバックエンドの TCP サービスへ転送します。\nHTTP-HTTP, HTTPS-HTTPS: フロントエンドで受信した HTTP または HTTPS リクエストをバックエンドの WEB サービスに転送します。\n";
+Footer_FRONT-END = "インターネットで通信可能な端末の IP アドレスを入力します。更新ボタンをタップすることで、現在のモバイル通信アドレスを取得できます。\nまた、ドアサーバーで受け付ける TCP ポート番号を指定します。\n";
+Footer_BACK-END = "インターネット共有（テザリング）に接続しているホストの IP アドレスを入力します。更新ボタンをタップすることで、ブロードキャスト呼び出しに応答した最初のアドレスを取得できます。\nまた、データ転送先の TCP サービスのポート番号を指定します。\n";
+Footer_FILTER_LIST = "フィルタリングで使用する許可アドレス（フィルター）を最大 16 個まで登録できます。ホワイトリスト方式で、フィルターを一つ以上選択します。\nデフォルトのフィルター 0.0.0.0/0 は削除できません。\n";
+Footer_FILTER = "CIDR（Classless Inter-Domain Routing）表記で指定します。なお、ネットワークアドレスのホスト部は 0 で上書きして登録します。\n";
+Footer_DESCRIPTION = "各画面に説明文を表示します。\n";
+Footer_IDLE_TIMER = "接続断を避けるため、iOS のアイドルタイマーを無効にします。\n";
+Footer_SCREEN_COLOR = "ログ表示画面の背景色を反転させます。\n本設定が無効の場合は、端末設定の外観モードに合わせます。\n";
+Footer_SYSTEM_CALL_TRACE = "システムコールトレースの出力レベルを選択します。send/recv における送受信データの出力方法は以下のとおりです。\n\nレベル 1: データを出力しない\nレベル 2: 最初の 16 バイトをシステムコール行に含める\nレベル 3: システムコールに加えて 16 進ダンプを出力する\n";
+Footer_DEBUG = "エラーログに加え、アプリのデバッグログを出力します。アプリのエラーログは常時出力されます。\n注: デバッグログは、開発者向けのため一般の使用は想定していません。\n";

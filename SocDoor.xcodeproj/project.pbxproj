@@ -13,6 +13,42 @@
 		6C6F436125D64D6C003DFCFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F436025D64D6C003DFCFF /* Assets.xcassets */; };
 		6C6F436425D64D6C003DFCFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F436325D64D6C003DFCFF /* Preview Assets.xcassets */; };
 		6C6F436725D64D6C003DFCFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F436525D64D6C003DFCFF /* LaunchScreen.storyboard */; };
+		6C6F437925D64DD5003DFCFF /* apps.css in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F437725D64DD5003DFCFF /* apps.css */; };
+		6C6F437A25D64DD5003DFCFF /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F437825D64DD5003DFCFF /* style.css */; };
+		6C6F438225D64DE2003DFCFF /* TermsOfService_ja.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F437C25D64DE1003DFCFF /* TermsOfService_ja.html */; };
+		6C6F438325D64DE2003DFCFF /* PrivacyPolicy.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F437D25D64DE2003DFCFF /* PrivacyPolicy.html */; };
+		6C6F438425D64DE2003DFCFF /* index_ja.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F437E25D64DE2003DFCFF /* index_ja.html */; };
+		6C6F438525D64DE2003DFCFF /* PrivacyPolicy_ja.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F437F25D64DE2003DFCFF /* PrivacyPolicy_ja.html */; };
+		6C6F438625D64DE2003DFCFF /* TermsOfService.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F438025D64DE2003DFCFF /* TermsOfService.html */; };
+		6C6F438725D64DE2003DFCFF /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F438125D64DE2003DFCFF /* index.html */; };
+		6C6F438D25D64DF8003DFCFF /* home.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F438925D64DF8003DFCFF /* home.svg */; };
+		6C6F438E25D64DF8003DFCFF /* AppStore_US.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F438A25D64DF8003DFCFF /* AppStore_US.svg */; };
+		6C6F438F25D64DF8003DFCFF /* mark-github.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F438B25D64DF8003DFCFF /* mark-github.svg */; };
+		6C6F439025D64DF8003DFCFF /* AppStore_JP.svg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F438C25D64DF8003DFCFF /* AppStore_JP.svg */; };
+		6C6F439325D64E06003DFCFF /* SocDoor_splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F439225D64E06003DFCFF /* SocDoor_splash.png */; };
+		6C6F439625D64E12003DFCFF /* Intro.001.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F439525D64E12003DFCFF /* Intro.001.jpeg */; };
+		6C6F439A25D64E64003DFCFF /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F439925D64E64003DFCFF /* Data+Extension.swift */; };
+		6C6F439E25D64E88003DFCFF /* icmp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F439D25D64E88003DFCFF /* icmp.swift */; };
+		6C6F43A125D64EA0003DFCFF /* SocAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43A025D64EA0003DFCFF /* SocAddress.swift */; };
+		6C6F43A425D64EB6003DFCFF /* SocCmsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43A325D64EB6003DFCFF /* SocCmsg.swift */; };
+		6C6F43A725D64EDD003DFCFF /* SocError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43A625D64EDD003DFCFF /* SocError.swift */; };
+		6C6F43AA25D64EF4003DFCFF /* SocLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43A925D64EF4003DFCFF /* SocLogger.swift */; };
+		6C6F43AD25D64F13003DFCFF /* SocOptval.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43AC25D64F13003DFCFF /* SocOptval.swift */; };
+		6C6F43B025D64F2B003DFCFF /* SocSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43AF25D64F2B003DFCFF /* SocSocket.swift */; };
+		6C6F43B325D64F46003DFCFF /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43B225D64F46003DFCFF /* String+Extension.swift */; };
+		6C6F43B625D64F5B003DFCFF /* UInt8+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43B525D64F5B003DFCFF /* UInt8+Extension.swift */; };
+		6C6F43B925D650CE003DFCFF /* SocDoorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43B825D650CE003DFCFF /* SocDoorConfiguration.swift */; };
+		6C6F43BC25D650F3003DFCFF /* SocDoorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43BB25D650F3003DFCFF /* SocDoorError.swift */; };
+		6C6F43BF25D6510A003DFCFF /* SocDoorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43BE25D6510A003DFCFF /* SocDoorFilter.swift */; };
+		6C6F43C225D65121003DFCFF /* SocDoorFilterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43C125D65121003DFCFF /* SocDoorFilterManager.swift */; };
+		6C6F43C525D6513E003DFCFF /* SocDoorInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43C425D6513E003DFCFF /* SocDoorInterface.swift */; };
+		6C6F43C825D65155003DFCFF /* SocDoorMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43C725D65155003DFCFF /* SocDoorMenu.swift */; };
+		6C6F43CB25D65180003DFCFF /* SocDoorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43CA25D65180003DFCFF /* SocDoorScreen.swift */; };
+		6C6F43CE25D65199003DFCFF /* SocDoorSharedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43CD25D65199003DFCFF /* SocDoorSharedObject.swift */; };
+		6C6F43D125D651B2003DFCFF /* SocDoorStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43D025D651B2003DFCFF /* SocDoorStatistics.swift */; };
+		6C6F43D425D651D0003DFCFF /* SocDoorTcpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43D325D651D0003DFCFF /* SocDoorTcpServer.swift */; };
+		6C6F43D725D651F5003DFCFF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43D625D651F5003DFCFF /* UIApplication+Extension.swift */; };
+		6C6F43DD25D65386003DFCFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43DF25D65386003DFCFF /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +60,44 @@
 		6C6F436325D64D6C003DFCFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		6C6F436625D64D6C003DFCFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6C6F436825D64D6C003DFCFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6C6F437125D64DA0003DFCFF /* SocDoor-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SocDoor-Bridging-Header.h"; sourceTree = "<group>"; };
+		6C6F437725D64DD5003DFCFF /* apps.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = apps.css; sourceTree = "<group>"; };
+		6C6F437825D64DD5003DFCFF /* style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = style.css; sourceTree = "<group>"; };
+		6C6F437C25D64DE1003DFCFF /* TermsOfService_ja.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TermsOfService_ja.html; sourceTree = "<group>"; };
+		6C6F437D25D64DE2003DFCFF /* PrivacyPolicy.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PrivacyPolicy.html; sourceTree = "<group>"; };
+		6C6F437E25D64DE2003DFCFF /* index_ja.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index_ja.html; sourceTree = "<group>"; };
+		6C6F437F25D64DE2003DFCFF /* PrivacyPolicy_ja.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = PrivacyPolicy_ja.html; sourceTree = "<group>"; };
+		6C6F438025D64DE2003DFCFF /* TermsOfService.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = TermsOfService.html; sourceTree = "<group>"; };
+		6C6F438125D64DE2003DFCFF /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
+		6C6F438925D64DF8003DFCFF /* home.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = home.svg; sourceTree = "<group>"; };
+		6C6F438A25D64DF8003DFCFF /* AppStore_US.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppStore_US.svg; sourceTree = "<group>"; };
+		6C6F438B25D64DF8003DFCFF /* mark-github.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "mark-github.svg"; sourceTree = "<group>"; };
+		6C6F438C25D64DF8003DFCFF /* AppStore_JP.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AppStore_JP.svg; sourceTree = "<group>"; };
+		6C6F439225D64E06003DFCFF /* SocDoor_splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SocDoor_splash.png; sourceTree = "<group>"; };
+		6C6F439525D64E12003DFCFF /* Intro.001.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Intro.001.jpeg; sourceTree = "<group>"; };
+		6C6F439925D64E64003DFCFF /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		6C6F439D25D64E88003DFCFF /* icmp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = icmp.swift; sourceTree = "<group>"; };
+		6C6F43A025D64EA0003DFCFF /* SocAddress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocAddress.swift; sourceTree = "<group>"; };
+		6C6F43A325D64EB6003DFCFF /* SocCmsg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocCmsg.swift; sourceTree = "<group>"; };
+		6C6F43A625D64EDD003DFCFF /* SocError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocError.swift; sourceTree = "<group>"; };
+		6C6F43A925D64EF4003DFCFF /* SocLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocLogger.swift; sourceTree = "<group>"; };
+		6C6F43AC25D64F13003DFCFF /* SocOptval.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocOptval.swift; sourceTree = "<group>"; };
+		6C6F43AF25D64F2B003DFCFF /* SocSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocSocket.swift; sourceTree = "<group>"; };
+		6C6F43B225D64F46003DFCFF /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		6C6F43B525D64F5B003DFCFF /* UInt8+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UInt8+Extension.swift"; sourceTree = "<group>"; };
+		6C6F43B825D650CE003DFCFF /* SocDoorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorConfiguration.swift; sourceTree = "<group>"; };
+		6C6F43BB25D650F3003DFCFF /* SocDoorError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorError.swift; sourceTree = "<group>"; };
+		6C6F43BE25D6510A003DFCFF /* SocDoorFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorFilter.swift; sourceTree = "<group>"; };
+		6C6F43C125D65121003DFCFF /* SocDoorFilterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorFilterManager.swift; sourceTree = "<group>"; };
+		6C6F43C425D6513E003DFCFF /* SocDoorInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorInterface.swift; sourceTree = "<group>"; };
+		6C6F43C725D65155003DFCFF /* SocDoorMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorMenu.swift; sourceTree = "<group>"; };
+		6C6F43CA25D65180003DFCFF /* SocDoorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorScreen.swift; sourceTree = "<group>"; };
+		6C6F43CD25D65199003DFCFF /* SocDoorSharedObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorSharedObject.swift; sourceTree = "<group>"; };
+		6C6F43D025D651B2003DFCFF /* SocDoorStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorStatistics.swift; sourceTree = "<group>"; };
+		6C6F43D325D651D0003DFCFF /* SocDoorTcpServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocDoorTcpServer.swift; sourceTree = "<group>"; };
+		6C6F43D625D651F5003DFCFF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		6C6F43DE25D65386003DFCFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C6F43E125D65395003DFCFF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +114,7 @@
 		6C6F434E25D64D6B003DFCFF = {
 			isa = PBXGroup;
 			children = (
+				6C6F436F25D64D74003DFCFF /* docs */,
 				6C6F435925D64D6B003DFCFF /* SocDoor */,
 				6C6F435825D64D6B003DFCFF /* Products */,
 			);
@@ -58,11 +133,25 @@
 			children = (
 				6C6F435A25D64D6B003DFCFF /* AppDelegate.swift */,
 				6C6F435C25D64D6B003DFCFF /* SceneDelegate.swift */,
+				6C6F43CD25D65199003DFCFF /* SocDoorSharedObject.swift */,
+				6C6F43BB25D650F3003DFCFF /* SocDoorError.swift */,
+				6C6F43D025D651B2003DFCFF /* SocDoorStatistics.swift */,
+				6C6F43BE25D6510A003DFCFF /* SocDoorFilter.swift */,
+				6C6F43C425D6513E003DFCFF /* SocDoorInterface.swift */,
+				6C6F43CA25D65180003DFCFF /* SocDoorScreen.swift */,
 				6C6F435E25D64D6B003DFCFF /* ContentView.swift */,
+				6C6F43B825D650CE003DFCFF /* SocDoorConfiguration.swift */,
+				6C6F43C125D65121003DFCFF /* SocDoorFilterManager.swift */,
+				6C6F43D325D651D0003DFCFF /* SocDoorTcpServer.swift */,
+				6C6F43C725D65155003DFCFF /* SocDoorMenu.swift */,
+				6C6F43D625D651F5003DFCFF /* UIApplication+Extension.swift */,
+				6C6F437125D64DA0003DFCFF /* SocDoor-Bridging-Header.h */,
+				6C6F439825D64E32003DFCFF /* LibSoc */,
 				6C6F436025D64D6C003DFCFF /* Assets.xcassets */,
 				6C6F436525D64D6C003DFCFF /* LaunchScreen.storyboard */,
 				6C6F436825D64D6C003DFCFF /* Info.plist */,
 				6C6F436225D64D6C003DFCFF /* Preview Content */,
+				6C6F43DF25D65386003DFCFF /* Localizable.strings */,
 			);
 			path = SocDoor;
 			sourceTree = "<group>";
@@ -73,6 +162,52 @@
 				6C6F436325D64D6C003DFCFF /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6C6F436F25D64D74003DFCFF /* docs */ = {
+			isa = PBXGroup;
+			children = (
+				6C6F437E25D64DE2003DFCFF /* index_ja.html */,
+				6C6F438125D64DE2003DFCFF /* index.html */,
+				6C6F437F25D64DE2003DFCFF /* PrivacyPolicy_ja.html */,
+				6C6F437D25D64DE2003DFCFF /* PrivacyPolicy.html */,
+				6C6F437C25D64DE1003DFCFF /* TermsOfService_ja.html */,
+				6C6F438025D64DE2003DFCFF /* TermsOfService.html */,
+				6C6F437725D64DD5003DFCFF /* apps.css */,
+				6C6F437825D64DD5003DFCFF /* style.css */,
+				6C6F437625D64DBA003DFCFF /* img */,
+			);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		6C6F437625D64DBA003DFCFF /* img */ = {
+			isa = PBXGroup;
+			children = (
+				6C6F439525D64E12003DFCFF /* Intro.001.jpeg */,
+				6C6F439225D64E06003DFCFF /* SocDoor_splash.png */,
+				6C6F438C25D64DF8003DFCFF /* AppStore_JP.svg */,
+				6C6F438A25D64DF8003DFCFF /* AppStore_US.svg */,
+				6C6F438925D64DF8003DFCFF /* home.svg */,
+				6C6F438B25D64DF8003DFCFF /* mark-github.svg */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
+		6C6F439825D64E32003DFCFF /* LibSoc */ = {
+			isa = PBXGroup;
+			children = (
+				6C6F439925D64E64003DFCFF /* Data+Extension.swift */,
+				6C6F439D25D64E88003DFCFF /* icmp.swift */,
+				6C6F43A025D64EA0003DFCFF /* SocAddress.swift */,
+				6C6F43A325D64EB6003DFCFF /* SocCmsg.swift */,
+				6C6F43A625D64EDD003DFCFF /* SocError.swift */,
+				6C6F43A925D64EF4003DFCFF /* SocLogger.swift */,
+				6C6F43AC25D64F13003DFCFF /* SocOptval.swift */,
+				6C6F43AF25D64F2B003DFCFF /* SocSocket.swift */,
+				6C6F43B225D64F46003DFCFF /* String+Extension.swift */,
+				6C6F43B525D64F5B003DFCFF /* UInt8+Extension.swift */,
+			);
+			path = LibSoc;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -106,6 +241,7 @@
 				TargetAttributes = {
 					6C6F435625D64D6B003DFCFF = {
 						CreatedOnToolsVersion = 12.4;
+						LastSwiftMigration = 1240;
 					};
 				};
 			};
@@ -116,6 +252,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 6C6F434E25D64D6B003DFCFF;
 			productRefGroup = 6C6F435825D64D6B003DFCFF /* Products */;
@@ -132,9 +269,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6F439025D64DF8003DFCFF /* AppStore_JP.svg in Resources */,
 				6C6F436725D64D6C003DFCFF /* LaunchScreen.storyboard in Resources */,
+				6C6F438725D64DE2003DFCFF /* index.html in Resources */,
+				6C6F438625D64DE2003DFCFF /* TermsOfService.html in Resources */,
 				6C6F436425D64D6C003DFCFF /* Preview Assets.xcassets in Resources */,
+				6C6F438425D64DE2003DFCFF /* index_ja.html in Resources */,
+				6C6F439625D64E12003DFCFF /* Intro.001.jpeg in Resources */,
+				6C6F438E25D64DF8003DFCFF /* AppStore_US.svg in Resources */,
+				6C6F438325D64DE2003DFCFF /* PrivacyPolicy.html in Resources */,
+				6C6F439325D64E06003DFCFF /* SocDoor_splash.png in Resources */,
+				6C6F438225D64DE2003DFCFF /* TermsOfService_ja.html in Resources */,
+				6C6F438F25D64DF8003DFCFF /* mark-github.svg in Resources */,
+				6C6F438D25D64DF8003DFCFF /* home.svg in Resources */,
+				6C6F43DD25D65386003DFCFF /* Localizable.strings in Resources */,
+				6C6F437A25D64DD5003DFCFF /* style.css in Resources */,
 				6C6F436125D64D6C003DFCFF /* Assets.xcassets in Resources */,
+				6C6F437925D64DD5003DFCFF /* apps.css in Resources */,
+				6C6F438525D64DE2003DFCFF /* PrivacyPolicy_ja.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,9 +297,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C6F43B925D650CE003DFCFF /* SocDoorConfiguration.swift in Sources */,
+				6C6F43A725D64EDD003DFCFF /* SocError.swift in Sources */,
+				6C6F43CE25D65199003DFCFF /* SocDoorSharedObject.swift in Sources */,
+				6C6F43B625D64F5B003DFCFF /* UInt8+Extension.swift in Sources */,
+				6C6F43CB25D65180003DFCFF /* SocDoorScreen.swift in Sources */,
+				6C6F43AD25D64F13003DFCFF /* SocOptval.swift in Sources */,
+				6C6F43C225D65121003DFCFF /* SocDoorFilterManager.swift in Sources */,
+				6C6F43C525D6513E003DFCFF /* SocDoorInterface.swift in Sources */,
+				6C6F43B025D64F2B003DFCFF /* SocSocket.swift in Sources */,
 				6C6F435B25D64D6B003DFCFF /* AppDelegate.swift in Sources */,
+				6C6F43D725D651F5003DFCFF /* UIApplication+Extension.swift in Sources */,
+				6C6F43D425D651D0003DFCFF /* SocDoorTcpServer.swift in Sources */,
+				6C6F43B325D64F46003DFCFF /* String+Extension.swift in Sources */,
+				6C6F439A25D64E64003DFCFF /* Data+Extension.swift in Sources */,
+				6C6F43A425D64EB6003DFCFF /* SocCmsg.swift in Sources */,
+				6C6F43A125D64EA0003DFCFF /* SocAddress.swift in Sources */,
 				6C6F435D25D64D6B003DFCFF /* SceneDelegate.swift in Sources */,
 				6C6F435F25D64D6B003DFCFF /* ContentView.swift in Sources */,
+				6C6F43BC25D650F3003DFCFF /* SocDoorError.swift in Sources */,
+				6C6F43C825D65155003DFCFF /* SocDoorMenu.swift in Sources */,
+				6C6F43D125D651B2003DFCFF /* SocDoorStatistics.swift in Sources */,
+				6C6F43BF25D6510A003DFCFF /* SocDoorFilter.swift in Sources */,
+				6C6F439E25D64E88003DFCFF /* icmp.swift in Sources */,
+				6C6F43AA25D64EF4003DFCFF /* SocLogger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +335,15 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		6C6F43DF25D65386003DFCFF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C6F43DE25D65386003DFCFF /* en */,
+				6C6F43E125D65395003DFCFF /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -169,6 +351,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -230,6 +413,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -286,19 +470,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SocDoor/Preview Content\"";
 				DEVELOPMENT_TEAM = DG8D574ZV8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocDoor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.90;
 				PRODUCT_BUNDLE_IDENTIFIER = manabapp.SocDoor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocDoor/SocDoor-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -307,19 +496,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SocDoor/Preview Content\"";
 				DEVELOPMENT_TEAM = DG8D574ZV8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SocDoor/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.90;
 				PRODUCT_BUNDLE_IDENTIFIER = manabapp.SocDoor;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SocDoor/SocDoor-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

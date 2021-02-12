@@ -1,0 +1,91 @@
+/* 
+  Localizable.strings
+  SocDoor
+
+  Created by Hirose Manabu on 2021/02/12.
+  
+*/
+
+ToS_Title = "Terms of Service";
+ToS_Agree = "Agree";
+
+Message_Copied_to_clipboard = "Copied to clipboard.";
+Message_Cellurar_is_disabled = "Cellurar is disabled.";
+Message_No_backend_hosts_found = "No backend hosts found.";
+Message_OK = "OK";
+Message_NotSupport = "Not supported in the current version.";
+Message_NoValue = "No value.";
+Message_NoFilter = "No allowed address set.";
+Message_InvalidValue = "Invalid value.";
+Message_InvalidIndex = "Invalid index.";
+Message_InvalidIpAddr = "Invalid IP address format.";
+Message_InvalidSuffix = "Invalid suffix.";
+Message_InvalidPort = "Invalid port value.";
+Message_AlreadyAddressExist = "Already same address exists.";
+Message_AddressExceeded = "Maximum number of addresses exceeded.";
+Message_CantUseIpAddr = "Can't use the IP address.";
+Message_FailedHealthCheck = "Failed health check.";
+Message_CantOpenURL = "Can't open the Internet site.";
+Message_default = "Internal error.";
+
+Button_Start = "Start";
+Button_Stop = "Stop";
+Button_Register = "Register";
+Button_Reload = "Reload";  // no use
+Button_Reload2 = "Reload";
+Button_Copy = "Copy";  // no use
+Button_Copy2 = "Copy";
+Button_Clear = "Clear";  // no use
+Button_Clear2 = "Clear";
+
+Description_Open = "Opens the back door";
+Description_Close = "Closes the back door";
+Description_New_Filter = "Creates new filter";
+Description_App_Settings = "Changes setting for app operating & user interface";
+Description_Trace_Log = "Displays the system calls trace";
+Description_Access_Log = "Displays the access log";
+Description_About_App = "App's version information";
+Description_Privacy_Policy = "Privacy policy for app (Link to the Internet site)";
+Description_Terms_of_Service = "App terms of service (Link to the Internet site)";
+
+Label_IP_address = "IP address";
+Label_Port_number = "Port number";
+Label_Allow_address = "Allow address";
+Label_Certificate = "Certificate";
+Label_byte = "byte";
+Label_bytes = "bytes";
+Label_Connections = "Connections: ";
+Label_Access_Allow = "[A]allow: ";
+Label_Access_Deny = "[D]deny: ";
+Label_Access_Error = "[E]error: ";
+Label_Cellurar_Data_Total = "Cellurar Data (Total): ";
+Label_Cellurar_Data = "Cellurar Data: ";
+Label_Start_Date = "Start Date: ";
+Label_Enabled = "Enabled";
+Label_Disabled = "Disabled";
+Label_Inverted = "Inverted";
+Label_TRACE_Level1 = "Level 1";
+Label_TRACE_Level2 = "Level 2";
+Label_TRACE_Level3 = "Level 3";
+
+Header_PROTOCOL = "PROTOCOL";
+Header_FRONT-END = "FRONT-END";
+Header_BACK-END = "BACK-END";
+Header_FILTER_LIST = "FILTER LIST";
+Header_FILTER = "FILTER";
+Header_DOOR_SERVER = "DOOR SERVER";
+Header_SESSIONS = "SESSIONS";
+Header_PREFERENCES = "PREFERENCES";
+Header_LOG = "LOG";
+Header_INFORMATION = "INFORMATION";
+
+Footer_PROTOCOL = "TCP-TCP: Transfers the data received from frontend to the backend TCP service.\nHTTP-HTTP, HTTPS-HTTPS: Forwards HTTP or HTTPS requests received from frontend to the backend WEB service.\n";
+Footer_FRONT-END = "Enters the global IP address of this device for the Internet. With tapping the reload button, you can get the current global IP address.\nSpecifies the TCP port number that the door server accepts.\n";
+Footer_BACK-END = "Enters the IP address of the host connected to Personal Hotspot. With tapping the reload button, you can get the first address to response a broadcast call.\nSpecifies the port number of the TCP service to which the data is transferred.\n";
+Footer_FILTER_LIST = "You can register allowed addresses (filter) up to 16 for filtering. Selects one or more filters as a whitelist.\nCan't delete the default filter, 0.0.0.0/0.\n";
+Footer_FILTER = "Specifies in the CIDR (Classless Inter-Domain Routing) format. The host part of network address is overwritten with 0, and the filter registered.\n";
+Footer_DESCRIPTION = "Shows description article in each view.\n";
+Footer_IDLE_TIMER = "To avoid disconnection, turns off iOS's idle timer.\n";
+Footer_SCREEN_COLOR = "Inverts the background color in log view.\nWhen disabled, matchs iOS device's appearance.\n";
+Footer_SYSTEM_CALL_TRACE = "Selects the output level of system call trace. In send/recv system call, how to output transmitted/received data is as below.\n\nLevel 1: No data output\nLevel 2: First 16 bytes data is included into the line of system call\nLevel 3: Hex dump printed in addtion to system call\n";
+Footer_DEBUG = "In addition to error log, App's debug log is output. By the way, the app always outputs error log.\nNote: This log is for this app developer.\n";

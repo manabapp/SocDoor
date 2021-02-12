@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta name="viewport" content="width=375,initial-scale=1,user-scalable=yes">
+<title>SocDoor</title>
+<link rel="stylesheet" href="apps.css">
+</head>
+<body>
+<center>
+<img src="img/SocDoor_splash.png" width=130 height=130><br>
+<div class="title">SocDoor</div>
+<font color=#8e8e93 size=+1><b>BETA</b></font>
+
+<p>
+
+Let's make your laptop a server with using this personal back door.<br>
+( <font color=red>Preparing now</font> )
+
+<!--
+<div class="yoko">
+    <div><img class="screenshotimg" src="img/ScreenShot1.jpeg" alt="image1" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot2.jpeg" alt="image2" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot3.jpeg" alt="image3" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot4.jpeg" alt="image4" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot5.jpeg" alt="image5" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot6.jpeg" alt="image6" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot7.jpeg" alt="image7" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot8.jpeg" alt="image8" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot9.jpeg" alt="image9" width=276px height=597px></div>
+    <div><img class="screenshotimg" src="img/ScreenShot10.jpeg" alt="image10" width=276px height=597px></div>
+</div>
+
+<p>
+-->
+<div id="p1">
+    <a onclick="showDescription();">Learn more</a>
+</div>
+<div id="p2">
+    <a onclick="hideDescription();">Hide text</a><br>
+    <p align="left">
+    SocDoor relays packets to your laptop PC that do not have a global IP.<br><br>
+    
+    When you want to verify a server service, you can publish the service to the Internet by connect PC to your iPhone.<br><br>
+    
+    <img src="img/Intro.001.jpeg" width=100% /><br><br>
+    </p>
+    <a onclick="hideDescription();">Hide text</a>
+</div>
+
+<p>
+<br>
+<!-- refer: https://primer.style/octicons/ -->
+<a href="../Apps/index.html"><img src="img/home.svg" height=24></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="img/gray-github.svg" height=24>
+<!--
+<a href="https://github.com/manabapp/SocPing"><img src="img/mark-github.svg" height=24></a>
+-->
+<p>
+
+<!-- refer: https://qiita.com/macoril/items/48125b2a0a48339b3693 -->
+<!-- refer: https://developer.apple.com/jp/app-store/marketing/guidelines/ -->
+<a href="https://itunes.apple.com/app/idXXXXXXXXXX?mt=8"><img src="img/AppStore_US.svg"></a><br>
+<span class="trademarks">Apple, the Apple logo are registered trademarks of Apple Inc.</span>
+
+<p>
+
+<div class="copyright">
+    Copyright © 2021 manabapp. All rights reserved.<br>
+    English | <a class="footer" href="index_ja.html">Japanese</a>
+</div>
+
+<p>
+
+</center>
+<script>
+document.getElementById("p1").style.display = "block";
+document.getElementById("p2").style.display = "none";
+function showDescription(){
+    document.getElementById("p1").style.display = "none";
+    document.getElementById("p2").style.display = "block";
+}
+function hideDescription(){
+    document.getElementById("p1").style.display = "block";
+    document.getElementById("p2").style.display = "none";
+}
+</script>
+</body>
+</html>
