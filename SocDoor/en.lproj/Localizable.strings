@@ -49,6 +49,7 @@ Description_Privacy_Policy = "Privacy policy for app (Link to the Internet site)
 Description_Terms_of_Service = "App terms of service (Link to the Internet site)";
 
 Label_IP_address = "IP address";
+Label_placeholder_Cellurar_not_available = "Cellurar not available";
 Label_Port_number = "Port number";
 Label_Allow_address = "Allow address";
 Label_Certificate = "Certificate";
@@ -80,8 +81,8 @@ Header_LOG = "LOG";
 Header_INFORMATION = "INFORMATION";
 
 Footer_PROTOCOL = "TCP-TCP: Transfers the data received from frontend to the backend TCP service.\nHTTP-HTTP, HTTPS-HTTPS: Forwards HTTP or HTTPS requests received from frontend to the backend WEB service.\n";
-Footer_FRONT-END = "Enters the global IP address of this device for the Internet. With tapping the reload button, you can get the current global IP address.\nSpecifies the TCP port number that the door server accepts.\n";
-Footer_BACK-END = "Enters the IP address of the host connected to Personal Hotspot. With tapping the reload button, you can get the first address to response a broadcast call.\nSpecifies the port number of the TCP service to which the data is transferred.\n";
+Footer_FRONT-END = "The global IP address of this device for the Internet automatically is set. Specifies the TCP port number that the door server accepts.\nWith tapping the reload button, you can re-get the current global IP address.\n";
+Footer_BACK-END = "Enters the IP address of the host connected to Personal Hotspot. Specifies the port number of the TCP service to which the data is transferred.\nWith tapping the reload button, you can get the first address to response a broadcast call.\n";
 Footer_FILTER_LIST = "You can register allowed addresses (filter) up to 16 for filtering. Selects one or more filters as a whitelist.\nCan't delete the default filter, 0.0.0.0/0.\n";
 Footer_FILTER = "Specifies in the CIDR (Classless Inter-Domain Routing) format. The host part of network address is overwritten with 0, and the filter registered.\n";
 Footer_DESCRIPTION = "Shows description article in each view.\n";

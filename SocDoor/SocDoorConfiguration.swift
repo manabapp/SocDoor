@@ -44,10 +44,10 @@ struct SocDoorConfiguration: View {
                     HStack {
                         Text("Label_IP_address")
                             .frame(width: 110, alignment: .leading)
-                        TextField("", text: $stringFrontAddr)
-                            .keyboardType(.decimalPad)
+                        TextField("Label_placeholder_Cellurar_not_available", text: $stringFrontAddr)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(maxWidth: .infinity)
+                            .disabled(true)
                         Button(action: {
                             stringFrontAddr = ""
                             self.object.cellurar.ifconfig()

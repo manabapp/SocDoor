@@ -16,7 +16,7 @@
 <p>
 
 パーソナルなバックドアであなたのラップトップをサーバーにしよう。<br>
-（<font color=red>準備中</font>）
+（<font color=red>提出作業中</font>）
 <!--
 <div class="yoko">
     <div><img class="screenshotimg" src="img/ScreenShot1_ja.jpeg" alt="image1" width=276px height=597px></div>
@@ -41,9 +41,20 @@
     <p align="left">
     SocDoor は、グローバル IP を持たないラップトップ PC に対してパケットを中継します。<br><br>
     
-    サーバーサービスを検証したいときに、PC をあなたの iPhone に接続してインターネットにサービスを公開することができます。<br><br>
+    サーバープログラムを検証したいときに、PC をあなたの iPhone に接続してインターネットにサービスを公開することができます。<br><br>
     
     <img src="img/Intro.001.jpeg" width=100% /><br><br>
+    
+    <span class="functions">TCP-TCP</span><br>
+    iPhone のモバイル通信インターフェースで受信した TCP データをバックエンドの任意の TCP サービス（HTTP, HTTPS を含む）へ転送します。<br>
+    ポートフォワーディングではなく、いわゆる 1 対 1 のロードバランサーのように動作します。<br><br>
+
+    <span class="functions">HTTP-HTTP, HTTPS-HTTPS</span><br>
+    iPhone のモバイル通信インターフェースで受信した HTTP（または HTTPS）リクエストをバックエンドの WEB サービスに転送します。<br>
+    リバースプロキシとして動作します。また、サーバ証明書を用意することで　HTTPS を使用したセキュアな通信が可能となります。<br>
+    現在、本機能は使用できません。<br><br>
+    
+    本アプリは BETA バージョンであり、今後アップデートしていきます。
     </p>
     <a onclick="hideDescription();">説明を隠す</a>
 </div>
@@ -52,10 +63,7 @@
 <br>
 <!-- refer: https://primer.style/octicons/ -->
 <a href="../Apps/index_ja.html"><img src="img/home.svg" height=24></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="img/gray-github.svg" height=24>
-<!--
 <a href="https://github.com/manabapp/SocPing"><img src="img/mark-github.svg" height=24></a>
--->
 <p>
 
 <!-- refer: https://qiita.com/macoril/items/48125b2a0a48339b3693 -->
@@ -67,6 +75,8 @@
 
 <div class="copyright">
     Copyright © 2021 manabapp. All rights reserved.<br>
+    <a class="footer" href="TermsOfService_ja.html">利用規約</a>&nbsp;&nbsp;-&nbsp;
+    <a class="footer" href="PrivacyPolicy_ja.html">プライバシー</a>&nbsp;&nbsp;-&nbsp;
     <a class="footer" href="index.html">English</a> | 日本語
 </div>
 

@@ -49,6 +49,7 @@ Description_Privacy_Policy = "アプリのプライバシーポリシー（外�
 Description_Terms_of_Service = "アプリの利用規約（外部インターネットサイト）";
 
 Label_IP_address = "IP アドレス";
+Label_placeholder_Cellurar_not_available = "モバイル通信が無効です";
 Label_Port_number = "ポート番号";
 Label_Allow_address = "許可アドレス";
 Label_Certificate = "証明書";
@@ -80,8 +81,8 @@ Header_LOG = "ログ";
 Header_INFORMATION = "情報";
 
 Footer_PROTOCOL = "TCP-TCP: フロントエンドで受信した任意のデータをバックエンドの TCP サービスへ転送します。\nHTTP-HTTP, HTTPS-HTTPS: フロントエンドで受信した HTTP または HTTPS リクエストをバックエンドの WEB サービスに転送します。\n";
-Footer_FRONT-END = "インターネットで通信可能な端末の IP アドレスを入力します。更新ボタンをタップすることで、現在のモバイル通信アドレスを取得できます。\nまた、ドアサーバーで受け付ける TCP ポート番号を指定します。\n";
-Footer_BACK-END = "インターネット共有（テザリング）に接続しているホストの IP アドレスを入力します。更新ボタンをタップすることで、ブロードキャスト呼び出しに応答した最初のアドレスを取得できます。\nまた、データ転送先の TCP サービスのポート番号を指定します。\n";
+Footer_FRONT-END = "インターネットで通信可能な場合、端末の IP アドレスが自動で設定されます。また、ドアサーバーで受け付ける TCP ポート番号を指定します。\n更新ボタンをタップすることで、現在のモバイル通信アドレスを再取得できます。\n";
+Footer_BACK-END = "インターネット共有（テザリング）に接続しているホストの IP アドレスを入力します。また、データ転送先の TCP サービスのポート番号を指定します。\n更新ボタンをタップすることで、ブロードキャスト呼び出しに応答した最初の IP アドレスを取得できます。\n";
 Footer_FILTER_LIST = "フィルタリングで使用する許可アドレス（フィルター）を最大 16 個まで登録できます。ホワイトリスト方式で、フィルターを一つ以上選択します。\nデフォルトのフィルター 0.0.0.0/0 は削除できません。\n";
 Footer_FILTER = "CIDR（Classless Inter-Domain Routing）表記で指定します。なお、ネットワークアドレスのホスト部は 0 で上書きして登録します。\n";
 Footer_DESCRIPTION = "各画面に説明文を表示します。\n";

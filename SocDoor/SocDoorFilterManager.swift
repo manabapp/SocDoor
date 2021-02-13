@@ -17,10 +17,10 @@ struct SocDoorFilterManager: View {
             Form {
                 Section(header: Text("Header_FILTER_LIST").font(.system(size: 16, weight: .semibold)),
                         footer: object.appSettingDescription ? Text("Footer_FILTER_LIST").font(.system(size: 12)) : nil) {
-                    FilterRaw(filter: self.object.filters[0])
-                        .contentShape(Rectangle())
-                        .onTapGesture { self.object.filters[0].isCheck.toggle() }
-                    ForEach(1 ..< self.object.filters.count, id: \.self) { i in
+//                    FilterRaw(filter: self.object.filters[0])
+//                        .contentShape(Rectangle())
+//                        .onTapGesture { self.object.filters[0].isCheck.toggle() }
+                    ForEach(0 ..< self.object.filters.count, id: \.self) { i in
                         if !self.object.filters[i].isDeleted {
                             FilterRaw(filter: self.object.filters[i])
                                 .contentShape(Rectangle())
@@ -30,7 +30,9 @@ struct SocDoorFilterManager: View {
                     .onDelete { indexSet in
                         SocLogger.debug("SocTestAddressManager: onDelete: \(indexSet)")
                         indexSet.forEach { i in
-                            self.object.filters[i].isDeleted = true
+                            if i != 0 {
+                                self.object.filters[i].isDeleted = true
+                            }
                         }
                         SocDoorSharedObject.saveFilters(doorFilters: self.object.filters)
                     }

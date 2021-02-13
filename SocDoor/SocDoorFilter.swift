@@ -25,7 +25,7 @@ struct SocDoorFilter {
         let netaddr_org = UInt32(inet_addr(array[0])).bigEndian
         let netmask = UInt32(0xffffffff) << (32 - Int(array[1])!)
         let netaddr = netaddr_org & netmask
-        var filter = SocDoorFilter(cidr: String.init(cString: inet_ntoa(in_addr(s_addr: netaddr))) + "/" + array[1])
+        var filter = SocDoorFilter(cidr: String.init(cString: inet_ntoa(in_addr(s_addr: netaddr.bigEndian))) + "/" + array[1])
         filter.netaddr = netaddr
         filter.netmask = netmask
         return filter
