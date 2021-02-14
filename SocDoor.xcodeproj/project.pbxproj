@@ -49,6 +49,16 @@
 		6C6F43D425D651D0003DFCFF /* SocDoorTcpServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43D325D651D0003DFCFF /* SocDoorTcpServer.swift */; };
 		6C6F43D725D651F5003DFCFF /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C6F43D625D651F5003DFCFF /* UIApplication+Extension.swift */; };
 		6C6F43DD25D65386003DFCFF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43DF25D65386003DFCFF /* Localizable.strings */; };
+		6C6F440225D8EBC0003DFCFF /* ScreenShot1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43F825D8EBC0003DFCFF /* ScreenShot1.jpeg */; };
+		6C6F440325D8EBC0003DFCFF /* ScreenShot2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43F925D8EBC0003DFCFF /* ScreenShot2.jpeg */; };
+		6C6F440425D8EBC0003DFCFF /* ScreenShot5.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43FA25D8EBC0003DFCFF /* ScreenShot5.jpeg */; };
+		6C6F440525D8EBC0003DFCFF /* ScreenShot4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43FB25D8EBC0003DFCFF /* ScreenShot4.jpeg */; };
+		6C6F440625D8EBC0003DFCFF /* ScreenShot1_ja.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43FC25D8EBC0003DFCFF /* ScreenShot1_ja.jpeg */; };
+		6C6F440725D8EBC0003DFCFF /* ScreenShot5_ja.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43FD25D8EBC0003DFCFF /* ScreenShot5_ja.jpeg */; };
+		6C6F440825D8EBC0003DFCFF /* ScreenShot2_ja.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43FE25D8EBC0003DFCFF /* ScreenShot2_ja.jpeg */; };
+		6C6F440925D8EBC0003DFCFF /* ScreenShot4_ja.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F43FF25D8EBC0003DFCFF /* ScreenShot4_ja.jpeg */; };
+		6C6F440A25D8EBC0003DFCFF /* ScreenShot3_ja.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F440025D8EBC0003DFCFF /* ScreenShot3_ja.jpeg */; };
+		6C6F440B25D8EBC0003DFCFF /* ScreenShot3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6C6F440125D8EBC0003DFCFF /* ScreenShot3.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +108,16 @@
 		6C6F43D625D651F5003DFCFF /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		6C6F43DE25D65386003DFCFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6C6F43E125D65395003DFCFF /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C6F43F825D8EBC0003DFCFF /* ScreenShot1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot1.jpeg; sourceTree = "<group>"; };
+		6C6F43F925D8EBC0003DFCFF /* ScreenShot2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot2.jpeg; sourceTree = "<group>"; };
+		6C6F43FA25D8EBC0003DFCFF /* ScreenShot5.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot5.jpeg; sourceTree = "<group>"; };
+		6C6F43FB25D8EBC0003DFCFF /* ScreenShot4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot4.jpeg; sourceTree = "<group>"; };
+		6C6F43FC25D8EBC0003DFCFF /* ScreenShot1_ja.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot1_ja.jpeg; sourceTree = "<group>"; };
+		6C6F43FD25D8EBC0003DFCFF /* ScreenShot5_ja.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot5_ja.jpeg; sourceTree = "<group>"; };
+		6C6F43FE25D8EBC0003DFCFF /* ScreenShot2_ja.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot2_ja.jpeg; sourceTree = "<group>"; };
+		6C6F43FF25D8EBC0003DFCFF /* ScreenShot4_ja.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot4_ja.jpeg; sourceTree = "<group>"; };
+		6C6F440025D8EBC0003DFCFF /* ScreenShot3_ja.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot3_ja.jpeg; sourceTree = "<group>"; };
+		6C6F440125D8EBC0003DFCFF /* ScreenShot3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ScreenShot3.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +209,16 @@
 				6C6F438A25D64DF8003DFCFF /* AppStore_US.svg */,
 				6C6F438925D64DF8003DFCFF /* home.svg */,
 				6C6F438B25D64DF8003DFCFF /* mark-github.svg */,
+				6C6F43FC25D8EBC0003DFCFF /* ScreenShot1_ja.jpeg */,
+				6C6F43F825D8EBC0003DFCFF /* ScreenShot1.jpeg */,
+				6C6F43FE25D8EBC0003DFCFF /* ScreenShot2_ja.jpeg */,
+				6C6F43F925D8EBC0003DFCFF /* ScreenShot2.jpeg */,
+				6C6F440025D8EBC0003DFCFF /* ScreenShot3_ja.jpeg */,
+				6C6F440125D8EBC0003DFCFF /* ScreenShot3.jpeg */,
+				6C6F43FF25D8EBC0003DFCFF /* ScreenShot4_ja.jpeg */,
+				6C6F43FB25D8EBC0003DFCFF /* ScreenShot4.jpeg */,
+				6C6F43FD25D8EBC0003DFCFF /* ScreenShot5_ja.jpeg */,
+				6C6F43FA25D8EBC0003DFCFF /* ScreenShot5.jpeg */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -270,23 +300,33 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C6F439025D64DF8003DFCFF /* AppStore_JP.svg in Resources */,
+				6C6F440225D8EBC0003DFCFF /* ScreenShot1.jpeg in Resources */,
 				6C6F436725D64D6C003DFCFF /* LaunchScreen.storyboard in Resources */,
 				6C6F438725D64DE2003DFCFF /* index.html in Resources */,
+				6C6F440325D8EBC0003DFCFF /* ScreenShot2.jpeg in Resources */,
 				6C6F438625D64DE2003DFCFF /* TermsOfService.html in Resources */,
 				6C6F436425D64D6C003DFCFF /* Preview Assets.xcassets in Resources */,
+				6C6F440925D8EBC0003DFCFF /* ScreenShot4_ja.jpeg in Resources */,
 				6C6F438425D64DE2003DFCFF /* index_ja.html in Resources */,
 				6C6F439625D64E12003DFCFF /* Intro.001.jpeg in Resources */,
 				6C6F438E25D64DF8003DFCFF /* AppStore_US.svg in Resources */,
 				6C6F438325D64DE2003DFCFF /* PrivacyPolicy.html in Resources */,
 				6C6F439325D64E06003DFCFF /* SocDoor_splash.png in Resources */,
+				6C6F440725D8EBC0003DFCFF /* ScreenShot5_ja.jpeg in Resources */,
+				6C6F440525D8EBC0003DFCFF /* ScreenShot4.jpeg in Resources */,
 				6C6F438225D64DE2003DFCFF /* TermsOfService_ja.html in Resources */,
+				6C6F440625D8EBC0003DFCFF /* ScreenShot1_ja.jpeg in Resources */,
+				6C6F440A25D8EBC0003DFCFF /* ScreenShot3_ja.jpeg in Resources */,
 				6C6F438F25D64DF8003DFCFF /* mark-github.svg in Resources */,
 				6C6F438D25D64DF8003DFCFF /* home.svg in Resources */,
 				6C6F43DD25D65386003DFCFF /* Localizable.strings in Resources */,
+				6C6F440B25D8EBC0003DFCFF /* ScreenShot3.jpeg in Resources */,
 				6C6F437A25D64DD5003DFCFF /* style.css in Resources */,
+				6C6F440425D8EBC0003DFCFF /* ScreenShot5.jpeg in Resources */,
 				6C6F436125D64D6C003DFCFF /* Assets.xcassets in Resources */,
 				6C6F437925D64DD5003DFCFF /* apps.css in Resources */,
 				6C6F438525D64DE2003DFCFF /* PrivacyPolicy_ja.html in Resources */,
+				6C6F440825D8EBC0003DFCFF /* ScreenShot2_ja.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

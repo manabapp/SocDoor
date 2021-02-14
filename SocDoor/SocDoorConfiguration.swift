@@ -39,15 +39,23 @@ struct SocDoorConfiguration: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-                Section(header: Text("Header_FRONT-END").font(.system(size: 16, weight: .semibold)),
+                Section(header:
+                            HStack(alignment: .bottom) {
+                                Image(systemName: "signpost.left.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 22, height: 22)
+                                Text("Header_FRONT-END")
+                                    .font(.system(size: 16, weight: .semibold))
+                                    .frame(alignment: .bottom)
+                            },
                         footer: object.appSettingDescription ? Text("Footer_FRONT-END").font(.system(size: 12)) : nil) {
                     HStack {
                         Text("Label_IP_address")
                             .frame(width: 110, alignment: .leading)
-                        TextField("Label_placeholder_Cellurar_not_available", text: $stringFrontAddr)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .frame(maxWidth: .infinity)
-                            .disabled(true)
+                        Text(stringFrontAddr.isEmpty ? "N/A" : stringFrontAddr)
+                            .foregroundColor(Color.init(stringFrontAddr.isEmpty ? UIColor.systemGray: UIColor.label))
+                        Spacer()
                         Button(action: {
                             stringFrontAddr = ""
                             self.object.cellurar.ifconfig()
@@ -89,10 +97,16 @@ struct SocDoorConfiguration: View {
                             Text("Label_Allow_address")
                                 .frame(width: 110, alignment: .leading)
                             VStack(alignment: .leading, spacing: 1) {
-                                ForEach(0 ..< object.filters.count, id: \.self) { i in
-                                    if !object.filters[i].isDeleted && object.filters[i].isCheck {
-                                        Text(object.filters[i].cidr)
+                                if object.hasActiveFilter {
+                                    ForEach(0 ..< object.filters.count, id: \.self) { i in
+                                        if !object.filters[i].isDeleted && object.filters[i].isCheck {
+                                            Text(object.filters[i].cidr)
+                                        }
                                     }
+                                }
+                                else {
+                                    Text("N/A")
+                                        .foregroundColor(Color.init(UIColor.systemGray))
                                 }
                             }
                             .frame(alignment: .leading)
@@ -114,7 +128,16 @@ struct SocDoorConfiguration: View {
                         .disabled(true)
                     }
                 }
-                Section(header: Text("Header_BACK-END").font(.system(size: 16, weight: .semibold)),
+                Section(header:
+                            HStack(alignment: .bottom) {
+                                Text("Header_BACK-END")
+                                    .font(.system(size: 16, weight: .semibold))
+                                    .frame(alignment: .bottom)
+                                Image(systemName: "signpost.right.fill")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 22, height: 22)
+                            },
                         footer: object.appSettingDescription ? Text("Footer_BACK-END").font(.system(size: 12)) : nil) {
                     HStack {
                         Text("Label_IP_address")
@@ -300,14 +323,7 @@ struct SocDoorConfiguration: View {
         guard (UInt16(stringFrontPort) != nil) else {
             return NSLocalizedString("Message_InvalidPort", comment: "")
         }
-        var anyCheck = false
-        for filter in object.filters {
-            if !filter.isDeleted && filter.isCheck {
-                anyCheck = true
-                break
-            }
-        }
-        guard anyCheck else {
+        guard object.hasActiveFilter else {
             return NSLocalizedString("Message_NoFilter", comment: "")
         }
         //Back
@@ -349,14 +365,7 @@ struct SocDoorConfiguration: View {
         guard (UInt16(stringFrontPort) != nil) else {
             return false
         }
-        var anyCheck = false
-        for filter in object.filters {
-            if !filter.isDeleted && filter.isCheck {
-                anyCheck = true
-                break
-            }
-        }
-        guard anyCheck else {
+        guard object.hasActiveFilter else {
             return false
         }
         //Back

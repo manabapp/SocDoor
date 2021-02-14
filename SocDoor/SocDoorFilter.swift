@@ -9,10 +9,12 @@ import Foundation
 
 struct SocDoorFilter {
     let cidr: String
-    var netaddr: UInt32 = 0
-    var netmask: UInt32 = 0
+    var netaddr: UInt32
+    var netmask: UInt32
     var isCheck: Bool = false
     var isDeleted: Bool = false
+    
+    var isActive: Bool { self.isCheck && !self.isDeleted }
     
     static func validCidr(cidr: String) -> SocDoorFilter? {
         guard cidr.isValidCidrFormat else {
@@ -31,11 +33,12 @@ struct SocDoorFilter {
         return filter
     }
     
-    init(cidr: String) {
+    init(cidr: String, isCheck: Bool = false) {
         self.cidr = cidr
         let array: [String] = cidr.components(separatedBy: "/")
         self.netaddr = UInt32(inet_addr(array[0])).bigEndian
         self.netmask = UInt32(0xffffffff) << (32 - Int(array[1])!)
+        self.isCheck = isCheck
     }
     
     func check(addr: String) -> Bool {

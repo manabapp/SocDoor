@@ -17,14 +17,29 @@ struct SocDoorFilterManager: View {
             Form {
                 Section(header: Text("Header_FILTER_LIST").font(.system(size: 16, weight: .semibold)),
                         footer: object.appSettingDescription ? Text("Footer_FILTER_LIST").font(.system(size: 12)) : nil) {
-//                    FilterRaw(filter: self.object.filters[0])
-//                        .contentShape(Rectangle())
-//                        .onTapGesture { self.object.filters[0].isCheck.toggle() }
                     ForEach(0 ..< self.object.filters.count, id: \.self) { i in
                         if !self.object.filters[i].isDeleted {
                             FilterRaw(filter: self.object.filters[i])
                                 .contentShape(Rectangle())
-                                .onTapGesture { self.object.filters[i].isCheck.toggle() }
+                                .onTapGesture {
+                                    if i == 0 {
+                                        if !self.object.filters[i].isCheck {
+                                            for i in 1 ..< self.object.filters.count {
+                                                self.object.filters[i].isCheck = false
+                                            }
+                                        }
+                                        self.object.filters[i].isCheck.toggle()
+                                    }
+                                    else {
+                                        self.object.filters[i].isCheck.toggle()
+                                        for i in 1 ..< self.object.filters.count {
+                                            if self.object.filters[i].isCheck {
+                                                self.object.filters[0].isCheck = false
+                                                break
+                                            }
+                                        }
+                                    }
+                                }
                         }
                     }
                     .onDelete { indexSet in
@@ -34,7 +49,7 @@ struct SocDoorFilterManager: View {
                                 self.object.filters[i].isDeleted = true
                             }
                         }
-                        SocDoorSharedObject.saveFilters(doorFilters: self.object.filters)
+                        self.object.saveFilters()
                     }
                 }
             }
@@ -177,7 +192,7 @@ fileprivate struct FilterRegister: View {
             throw SocDoorError.AddressExceeded
         }
         self.object.filters.append(newFilter)
-        SocDoorSharedObject.saveFilters(doorFilters: self.object.filters)
+        self.object.saveFilters()
     }
     
     private var errorMessage: String {

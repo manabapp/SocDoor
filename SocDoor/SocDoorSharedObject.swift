@@ -123,12 +123,22 @@ class SocDoorSharedObject: ObservableObject {
         return dateFormatter.string(from: date)
     }
     
-    static func saveFilters(doorFilters: [SocDoorFilter]) {
+    var hasActiveFilter: Bool {
+        for i in 0 ..< self.filters.count {
+            if self.filters[i].isActive {
+                return true
+            }
+        }
+        return false
+    }
+    
+    func saveFilters() {
         var stringsArray: [String] = []
         
-        for i in 1 ..< doorFilters.count {  //skip defaultFilter (0.0.0.0/0)
-            if !doorFilters[i].isDeleted {
-                stringsArray.append(doorFilters[i].cidr)
+        for i in 1 ..< self.filters.count {  //skip defaultFilter (0.0.0.0/0)
+            if !self.filters[i].isDeleted {
+                let stringsElement = "\(self.filters[i].cidr),\(self.filters[i].isCheck ? 1 : 0)"
+                stringsArray.append(stringsElement)
             }
         }
         if stringsArray.count > 0 {
@@ -196,8 +206,15 @@ class SocDoorSharedObject: ObservableObject {
         if UserDefaults.standard.object(forKey: "filters") != nil {
             if let stringsArray: [String] = UserDefaults.standard.stringArray(forKey: "filters") {
                 for stringsElement in stringsArray {
-                    if stringsElement.isValidCidrFormat {
-                        filters.append(SocDoorFilter(cidr: stringsElement))
+                    let array: [String] = stringsElement.components(separatedBy: ",")
+                    if array.count == 2 && array[0].isValidCidrFormat {
+                        var isCheck = false
+                        if let i = Int(array[1]) {
+                            if i > 0 {
+                                isCheck = true
+                            }
+                        }
+                        filters.append(SocDoorFilter(cidr: array[0], isCheck: isCheck))
                         SocLogger.debug("filter - \(stringsElement)")
                     }
                     else {
@@ -206,6 +223,9 @@ class SocDoorSharedObject: ObservableObject {
                     }
                 }
             }
+        }
+        if !self.hasActiveFilter {
+            filters[0].isCheck = true
         }
         SocLogger.debug("Check Device Configuration:")
         SocLogger.debug("Cellurar Address = \(cellurar.inet.addr)")

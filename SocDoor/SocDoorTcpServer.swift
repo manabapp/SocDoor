@@ -214,7 +214,7 @@ struct SocDoorTcpServer: View {
             }
             var isAllow = false
             for filter in self.object.filters {
-                if !filter.isDeleted && filter.isCheck && filter.check(addr: fromAddress.addr) {
+                if filter.isActive && filter.check(addr: fromAddress.addr) {
                     isAllow = true
                     break
                 }
