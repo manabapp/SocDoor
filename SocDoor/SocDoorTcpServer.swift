@@ -212,6 +212,7 @@ struct SocDoorTcpServer: View {
                 }
                 return
             }
+            try? from!.resolveHostName()
             var isAllow = false
             for filter in self.object.filters {
                 if filter.isActive && filter.check(addr: fromAddress.addr) {
@@ -336,6 +337,10 @@ struct SocDoorTcpServer: View {
     }
     
     private func postSession(index: Int, pairIndex: Int) {
+        if self.sockets[index].isClosed {
+            return
+        }
+        
         if self.sockets[index].isRdShutdown && self.sockets[index].isWrShutdown {
             self.closeSession(index)
         }
@@ -370,7 +375,10 @@ struct SocDoorTcpServer: View {
             }
         }
         
-        if !self.sockets[index].isClosed {
+        if self.sockets[index].isClosed {
+            return
+        }
+        if object.appSettingDescription {
             do {
                 let ret = try self.sockets[index].getsockopt(level: IPPROTO_TCP, option: TCP_CONNECTION_INFO)
                 self.sockets[index].connInfo = ret.connInfo
@@ -396,16 +404,14 @@ fileprivate struct TcpServerRow: View {
             Image(systemName: "rectangle.portrait.arrowtriangle.2.outward")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 22, height: 22, alignment: .center)
+                .frame(width: 26, height: 26, alignment: .center)
                 .foregroundColor(Color.init(self.isActive ? UIColor.systemGreen : UIColor.systemGray))
             VStack(alignment: .leading, spacing: 2) {
                 Text(self.name)
                     .font(.system(size: 16))
                 self.countsText
                 self.bytesText
-                if object.appSettingDescription {
-                    self.bytesText2
-                }
+                self.bytesText2
                 ProgressView(value: self.stats.progressValue, total: self.stats.progressTotal)
                     .accentColor(Color.init(self.isActive ? UIColor.systemBlue : UIColor.systemGray))
                 HStack {
@@ -427,7 +433,7 @@ fileprivate struct TcpServerRow: View {
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         let count = Text("\(self.stats.requests)")
-            .font(.system(size: 12))
+            .font(.system(size: 12, weight: self.isActive ? .semibold : .regular))
             .foregroundColor(Color.init(self.isActive ? UIColor.label : UIColor.systemGray))
         let equal = Text(" = ")
             .font(.system(size: 12))
@@ -436,24 +442,24 @@ fileprivate struct TcpServerRow: View {
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         let count2 = Text("\(self.stats.pass)")
-            .font(.system(size: 12))
+            .font(.system(size: 12, weight: self.isActive && self.stats.pass > 0 ? .semibold : .regular))
             .foregroundColor(Color.init(self.isActive && self.stats.pass > 0 ? UIColor.systemGreen : UIColor.systemGray))
-        let plus = Text(" + ")
+        let comma = Text(", ")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         let label3 = Text("Label_Access_Deny")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         let count3 = Text("\(self.stats.block)")
-            .font(.system(size: 12))
+            .font(.system(size: 12, weight: self.isActive && self.stats.block > 0 ? .semibold : .regular))
             .foregroundColor(Color.init(self.isActive && self.stats.block > 0 ? UIColor.systemYellow : UIColor.systemGray))
         let label4 = Text("Label_Access_Error")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         let count4 = Text("\(self.stats.failure)")
-            .font(.system(size: 12))
+            .font(.system(size: 12, weight: self.isActive && self.stats.failure > 0 ? .semibold : .regular))
             .foregroundColor(Color.init(self.isActive && self.stats.failure > 0 ? UIColor.systemRed : UIColor.systemGray))
-        return label + count + equal + label2 + count2 + plus + label3 + count3 + plus + label4 + count4
+        return label + count + equal + label2 + count2 + comma + label3 + count3 + comma + label4 + count4
     }
     
     private var bytesText: Text {
@@ -461,7 +467,7 @@ fileprivate struct TcpServerRow: View {
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         let count = Text("\(self.stats.sumbytes) ")
-            .font(.system(size: 12))
+            .font(.system(size: 12, weight: self.isActive ? .semibold : .regular))
             .foregroundColor(Color.init(self.isActive ? UIColor.label : UIColor.systemGray))
         let label2 = Text(self.stats.sumbytes == 1 ? "Label_byte" : "Label_bytes")
             .font(.system(size: 12))
@@ -470,19 +476,28 @@ fileprivate struct TcpServerRow: View {
     }
     
     private var bytesText2: Text {
-        let bytes = Text("RX: \(self.stats.rxbytes) ")
+        let label = Text("Label_RX")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        let label = Text(self.stats.rxbytes == 1 ? "Label_byte" : "Label_bytes")
+        let count = Text("\(self.stats.rxbytes) ")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        let bytes2 = Text(", TX: \(self.stats.txbytes) ")
+        let bytes = Text(self.stats.rxbytes == 1 ? "Label_byte" : "Label_bytes")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        let label2 = Text(self.stats.txbytes == 1 ? "Label_byte" : "Label_bytes")
+        let comma = Text(", ")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        return bytes + label + bytes2 + label2
+        let label2 = Text("Label_TX")
+            .font(.system(size: 12))
+            .foregroundColor(Color.init(UIColor.systemGray))
+        let count2 = Text("\(self.stats.txbytes) ")
+            .font(.system(size: 12))
+            .foregroundColor(Color.init(UIColor.systemGray))
+        let bytes2 = Text(self.stats.txbytes == 1 ? "Label_byte" : "Label_bytes")
+            .font(.system(size: 12))
+            .foregroundColor(Color.init(UIColor.systemGray))
+        return label + count + bytes + comma + label2 + count2 + bytes2
     }
 }
 
@@ -494,48 +509,57 @@ fileprivate struct TcpSessionRow: View {
     
     var body: some View {
         HStack {
-            Image(systemName: "arrow.left.and.right")
+//            Image(systemName: "arrow.left.and.right")
+            Image(systemName: "arrow.left.arrow.right")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 22, height: 22, alignment: .center)
+                .frame(width: 26, height: 26, alignment: .center)
             VStack(alignment: .leading, spacing: 2) {
-                if object.appSettingDescription {
-                    self.date
-                }
-                self.name
-                HStack(spacing: 2) {
-                    Text("Front:")
+                self.date
+                    .padding(.bottom, -1)
+                Text(self.frontSocket.remoteAddress!.addr + ":" + String(self.frontSocket.remoteAddress!.port))
+                    .font(.system(size: 24))
+                if self.frontSocket.remoteAddress!.hasHostName {
+                    Text(self.frontSocket.remoteAddress!.hostName)
                         .font(.system(size: 12))
                         .foregroundColor(Color.init(UIColor.systemGray))
-                    Image(systemName: self.isEstablished(self.frontSocket) ? "checkmark.circle.fill" : "exclamationmark.circle.fill")
-                        .font(.system(size: 11))
-                        .foregroundColor(Color.init(self.isEstablished(self.frontSocket) ? UIColor.systemGreen : UIColor.systemYellow))
-                    Text(self.getTcpState(self.frontSocket))
-                        .font(.system(size: 11, weight: .semibold))
-                        .foregroundColor(Color.init(UIColor.systemGray))
-                    Text(", Back:")
-                        .font(.system(size: 12))
-                        .foregroundColor(Color.init(UIColor.systemGray))
-                    Image(systemName: self.isEstablished(self.backSocket) ? "checkmark.circle.fill" : "exclamationmark.circle.fill")
-                        .font(.system(size: 11))
-                        .foregroundColor(Color.init(self.isEstablished(self.backSocket) ? UIColor.systemGreen : UIColor.systemYellow))
-                    Text(self.getTcpState(self.backSocket))
-                        .font(.system(size: 11, weight: .semibold))
-                        .foregroundColor(Color.init(UIColor.systemGray))
+                        .padding(.top, -1)
                 }
-                self.bytesText
                 if object.appSettingDescription {
+                    HStack(spacing: 2) {
+                        Image(systemName: "signpost.left.fill")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color.init(UIColor.systemGray))
+                        Image(systemName: self.isEstablished(self.frontSocket) ? "checkmark.circle.fill" : "exclamationmark.circle.fill")
+                            .font(.system(size: 11))
+                            .foregroundColor(Color.init(self.isEstablished(self.frontSocket) ? UIColor.systemGreen : UIColor.systemYellow))
+                        Text(self.getTcpState(self.frontSocket))
+                            .font(.system(size: 11, weight: .semibold))
+                            .foregroundColor(Color.init(UIColor.systemGray))
+                        
+                        Image(systemName: "signpost.right.fill")
+                            .font(.system(size: 12))
+                            .foregroundColor(Color.init(UIColor.systemGray))
+                            .padding(.leading, 15)
+                        Image(systemName: self.isEstablished(self.backSocket) ? "checkmark.circle.fill" : "exclamationmark.circle.fill")
+                            .font(.system(size: 11))
+                            .foregroundColor(Color.init(self.isEstablished(self.backSocket) ? UIColor.systemGreen : UIColor.systemYellow))
+                        Text(self.getTcpState(self.backSocket))
+                            .font(.system(size: 11, weight: .semibold))
+                            .foregroundColor(Color.init(UIColor.systemGray))
+                    }
+                    self.bytesText
                     self.bytesText2
-                }
-                ProgressView(value: self.progressValue, total: self.progressTotal)
-                HStack {
-                    Text("0")
-                        .font(.system(size: 10))
-                        .foregroundColor(Color.init(UIColor.systemGray))
-                    Spacer()
-                    Text(self.totalString)
-                        .font(.system(size: 10))
-                        .foregroundColor(Color.init(UIColor.systemGray))
+                    ProgressView(value: self.progressValue, total: self.progressTotal)
+                    HStack {
+                        Text("0")
+                            .font(.system(size: 10))
+                            .foregroundColor(Color.init(UIColor.systemGray))
+                        Spacer()
+                        Text(self.totalString)
+                            .font(.system(size: 10))
+                            .foregroundColor(Color.init(UIColor.systemGray))
+                    }
                 }
             }
             .padding(.leading)
@@ -550,15 +574,6 @@ fileprivate struct TcpSessionRow: View {
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         return label + start
-    }
-    
-    private var name: Text {
-        let label = Text("Client ")
-            .font(.system(size: 18))
-            .foregroundColor(Color.init(UIColor.systemGray))
-        let client = Text(self.frontSocket.remoteAddress!.addr + ":" + String(self.frontSocket.remoteAddress!.port))
-            .font(.system(size: 22))
-        return label + client
     }
     
     private func isEstablished(_ socket: SocSocket) -> Bool {
@@ -579,7 +594,7 @@ fileprivate struct TcpSessionRow: View {
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
         let count = Text("\(sumbytes) ")
-            .font(.system(size: 12))
+            .font(.system(size: 12, weight: .semibold))
         let label2 = Text(sumbytes == 1 ? "Label_byte" : "Label_bytes")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
@@ -587,19 +602,28 @@ fileprivate struct TcpSessionRow: View {
     }
     
     private var bytesText2: Text {
-        let bytes = Text("RX: \(self.frontSocket.connInfo.tcpi_rxbytes) ")
+        let label = Text("Label_RX")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        let label = Text(self.frontSocket.connInfo.tcpi_rxbytes == 1 ? "Label_byte" : "Label_bytes")
+        let count = Text("\(self.frontSocket.connInfo.tcpi_rxbytes) ")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        let bytes2 = Text(", TX: \(self.frontSocket.connInfo.tcpi_txbytes) ")
+        let bytes = Text(self.frontSocket.connInfo.tcpi_rxbytes == 1 ? "Label_byte" : "Label_bytes")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        let label2 = Text(self.frontSocket.connInfo.tcpi_txbytes == 1 ? "Label_byte" : "Label_bytes")
+        let comma = Text(", ")
             .font(.system(size: 12))
             .foregroundColor(Color.init(UIColor.systemGray))
-        return bytes + label + bytes2 + label2
+        let label2 = Text("Label_RX")
+            .font(.system(size: 12))
+            .foregroundColor(Color.init(UIColor.systemGray))
+        let count2 = Text("\(self.frontSocket.connInfo.tcpi_txbytes) ")
+            .font(.system(size: 12))
+            .foregroundColor(Color.init(UIColor.systemGray))
+        let bytes2 = Text(self.frontSocket.connInfo.tcpi_txbytes == 1 ? "Label_byte" : "Label_bytes")
+            .font(.system(size: 12))
+            .foregroundColor(Color.init(UIColor.systemGray))
+        return label + count + bytes + comma + label2 + count2 + bytes2
     }
     
     private var progressValue: Double { Double(sumbytes) }

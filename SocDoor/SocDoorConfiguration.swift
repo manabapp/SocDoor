@@ -227,6 +227,8 @@ struct SocDoorConfiguration: View {
                             backAddress.addr = self.stringBackAddr
                             backAddress.port = UInt16(self.stringBackPort)!
                             object.doorSettingBackPort = Int(backAddress.port)
+                            
+                            object.saveFilters()
                         }) {
                             HStack {
                                 Spacer()
