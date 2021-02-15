@@ -15,6 +15,7 @@ struct SocDoorFilter {
     var isDeleted: Bool = false
     
     var isActive: Bool { self.isCheck && !self.isDeleted }
+    var isAny: Bool { self.netmask == 0 }
     
     static func validCidr(cidr: String) -> SocDoorFilter? {
         guard cidr.isValidCidrFormat else {

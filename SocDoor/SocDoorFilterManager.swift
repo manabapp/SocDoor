@@ -21,31 +21,13 @@ struct SocDoorFilterManager: View {
                         if !self.object.filters[i].isDeleted {
                             FilterRaw(filter: self.object.filters[i])
                                 .contentShape(Rectangle())
-                                .onTapGesture {
-                                    if i == 0 {
-                                        if !self.object.filters[i].isCheck {
-                                            for i in 1 ..< self.object.filters.count {
-                                                self.object.filters[i].isCheck = false
-                                            }
-                                        }
-                                        self.object.filters[i].isCheck.toggle()
-                                    }
-                                    else {
-                                        self.object.filters[i].isCheck.toggle()
-                                        for i in 1 ..< self.object.filters.count {
-                                            if self.object.filters[i].isCheck {
-                                                self.object.filters[0].isCheck = false
-                                                break
-                                            }
-                                        }
-                                    }
-                                }
+                                .onTapGesture { self.object.filters[i].isCheck.toggle() }
                         }
                     }
                     .onDelete { indexSet in
                         SocLogger.debug("SocTestAddressManager: onDelete: \(indexSet)")
                         indexSet.forEach { i in
-                            if i != 0 {
+                            if !self.object.filters[i].isAny {
                                 self.object.filters[i].isDeleted = true
                             }
                         }
@@ -135,7 +117,7 @@ fileprivate struct FilterRegister: View {
                             }
                 ) {
                     Button(action: {
-                        SocLogger.debug("SocPingOnePinger: Button: Stop")
+                        SocLogger.debug("SocDoorFilterManager: Button: Register")
                         do {
                             try self.register()
                             self.presentationMode.wrappedValue.dismiss()
@@ -147,7 +129,7 @@ fileprivate struct FilterRegister: View {
                             return
                         }
                         catch {
-                            fatalError("SocDoorServer: \(error)")
+                            fatalError("SocDoorFilterManager: \(error)")
                         }
                     }) {
                         HStack {
@@ -176,7 +158,7 @@ fileprivate struct FilterRegister: View {
         }
         for filter in self.object.filters {
             if !filter.isDeleted && filter.cidr == newFilter.cidr {
-                SocLogger.debug("AddressRegister.getInetAddress: \(filter.cidr) exists")
+                SocLogger.debug("SocDoorFilterManager.register: \(filter.cidr) exists")
                 throw SocDoorError.AlreadyAddressExist(cidr: filter.cidr)
             }
         }
@@ -188,7 +170,7 @@ fileprivate struct FilterRegister: View {
             }
         }
         if count >= SocDoorFilterManager.maxRegistNumber {
-            SocLogger.debug("AddressRegister.getInetAddress: Can't register anymore")
+            SocLogger.debug("SocDoorFilterManager.register: Can't register anymore")
             throw SocDoorError.AddressExceeded
         }
         self.object.filters.append(newFilter)

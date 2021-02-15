@@ -34,7 +34,7 @@ struct SocDoorMenu: View {
                         EmptyView()
                     }
                     Button(action: {
-                        SocLogger.debug("SocTestMenu: Button: Trace Log")
+                        SocLogger.debug("SocDoorMenu: Button: Trace Log")
                         self.logText = SocLogger.getLog()
                     }) {
                         CommonRaw(name:"Trace Log", image:"note.text", detail:"Description_Trace_Log")
@@ -49,13 +49,13 @@ struct SocDoorMenu: View {
                     CommonRaw(name:"About App", image:"info.circle", detail:"Description_About_App")
                 }
                 Button(action: {
-                    SocLogger.debug("SocTestMenu: Button: Policy")
+                    SocLogger.debug("SocDoorMenu: Button: Policy")
                     self.openURL(urlString: SocDoorSharedObject.isJa ? URL_POLICY_JA : URL_POLICY)
                 }) {
                     CommonRaw(name:"Privacy Policy", image:"hand.raised.fill", detail:"Description_Privacy_Policy")
                 }
                 Button(action: {
-                    SocLogger.debug("SocTestMenu: Button: Terms")
+                    SocLogger.debug("SocDoorMenu: Button: Terms")
                     self.openURL(urlString: SocDoorSharedObject.isJa ? URL_TERMS_JA : URL_TERMS)
                 }) {
                     CommonRaw(name:"Terms of Service", image:"doc.plaintext", detail:"Description_Terms_of_Service")
@@ -82,7 +82,7 @@ struct SocDoorMenu: View {
             self.object.isPopAlert = true
         }
         catch {
-            fatalError("SocTestMenu.openURL(\(urlString)): \(error)")
+            fatalError("SocDoorMenu.openURL(\(urlString)): \(error)")
         }
     }
 }
@@ -178,7 +178,7 @@ fileprivate struct SocDoorTraceLogViewer: View {
                 HStack(spacing: 0) {
                     Form {
                         Button(action: {
-                            SocLogger.debug("SocTestLogViewer: Button: Reload")
+                            SocLogger.debug("SocDoorTraceLogViewer: Button: Reload")
                             self.text = SocLogger.getLog()
                         }) {
                             HStack {
@@ -195,7 +195,7 @@ fileprivate struct SocDoorTraceLogViewer: View {
                     }
                     Form {
                         Button(action: {
-                            SocLogger.debug("SocTestLogViewer: Button: Copy")
+                            SocLogger.debug("SocDoorTraceLogViewer: Button: Copy")
                             self.text = SocLogger.getLog()
                             UIPasteboard.general.string = self.text
                             object.alertMessage = NSLocalizedString("Message_Copied_to_clipboard", comment: "")
@@ -221,7 +221,7 @@ fileprivate struct SocDoorTraceLogViewer: View {
                     }
                     Form {
                         Button(action: {
-                            SocLogger.debug("SocTestLogViewer: Button: Clear")
+                            SocLogger.debug("SocDoorTraceLogViewer: Button: Clear")
                             SocLogger.clearLog()
                             self.text = SocLogger.getLog()
                         }) {
@@ -257,7 +257,7 @@ fileprivate struct SocDoorAccessLogViewer: View {
                 HStack(spacing: 0) {
                     Form {
                         Button(action: {
-                            SocLogger.debug("SocTestLogViewer: Button: Copy")
+                            SocLogger.debug("SocDoorAccessLogViewer: Button: Copy")
                             UIPasteboard.general.string = self.object.logBuffer
                             object.alertMessage = NSLocalizedString("Message_Copied_to_clipboard", comment: "")
                             object.isAlerting = true
@@ -282,7 +282,7 @@ fileprivate struct SocDoorAccessLogViewer: View {
                     }
                     Form {
                         Button(action: {
-                            SocLogger.debug("SocTestLogViewer: Button: Clear")
+                            SocLogger.debug("SocDoorAccessLogViewer: Button: Clear")
                             self.object.resetAccessLog()
                         }) {
                             HStack {
@@ -353,7 +353,7 @@ fileprivate struct AboutApp: View {
             Text("Please feel free to contact me if you have any feedback.")
                 .font(.system(size: 11))
             Button(action: {
-                SocLogger.debug("SocTestMenu: Button: mailto")
+                SocLogger.debug("AboutApp: Button: mailto")
                 let url = URL(string: "mailto:" + MAIL_ADDRESS)!
                 UIApplication.shared.open(url)
             }) {

@@ -132,14 +132,24 @@ class SocDoorSharedObject: ObservableObject {
         return false
     }
     
+    var hasAnyFilter: Bool {
+        for i in 0 ..< self.filters.count {
+            if self.filters[i].isAny {
+                return true
+            }
+        }
+        return false
+    }
+    
     func saveFilters() {
         var stringsArray: [String] = []
         
-        for i in 1 ..< self.filters.count {  //skip defaultFilter (0.0.0.0/0)
-            if !self.filters[i].isDeleted {
-                let stringsElement = "\(self.filters[i].cidr),\(self.filters[i].isCheck ? 1 : 0)"
-                stringsArray.append(stringsElement)
+        for i in 0 ..< self.filters.count {
+            if self.filters[i].isDeleted {
+                continue
             }
+            let stringsElement = "\(self.filters[i].cidr),\(self.filters[i].isCheck ? 1 : 0)"
+            stringsArray.append(stringsElement)
         }
         if stringsArray.count > 0 {
             SocLogger.debug("SocDoorSharedObject.saveFilters: \(stringsArray.count) filters")
@@ -199,10 +209,6 @@ class SocDoorSharedObject: ObservableObject {
         SocLogger.debug("doorSettingFrontPort = \(doorSettingFrontPort)")
         SocLogger.debug("doorSettingBackPort = \(doorSettingBackPort)")
         SocLogger.debug("Load Filter:")
-        var defaultFilter = SocDoorFilter(cidr: "0.0.0.0/0")
-        defaultFilter.isCheck = true
-        filters.append(defaultFilter)
-        SocLogger.debug("filter - 0.0.0.0/0")
         if UserDefaults.standard.object(forKey: "filters") != nil {
             if let stringsArray: [String] = UserDefaults.standard.stringArray(forKey: "filters") {
                 for stringsElement in stringsArray {
@@ -214,7 +220,8 @@ class SocDoorSharedObject: ObservableObject {
                                 isCheck = true
                             }
                         }
-                        filters.append(SocDoorFilter(cidr: array[0], isCheck: isCheck))
+                        let filter = SocDoorFilter(cidr: array[0], isCheck: isCheck)
+                        filters.append(filter)
                         SocLogger.debug("filter - \(stringsElement)")
                     }
                     else {
@@ -224,8 +231,10 @@ class SocDoorSharedObject: ObservableObject {
                 }
             }
         }
-        if !self.hasActiveFilter {
-            filters[0].isCheck = true
+        if !self.hasAnyFilter {  //Only initial launching
+            let defaultFilter = SocDoorFilter(cidr: "0.0.0.0/0", isCheck: true)
+            filters.insert(defaultFilter, at: 0)
+            SocLogger.debug("filter - 0.0.0.0/0")
         }
         SocLogger.debug("Check Device Configuration:")
         SocLogger.debug("Cellurar Address = \(cellurar.inet.addr)")

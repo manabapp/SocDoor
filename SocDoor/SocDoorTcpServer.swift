@@ -39,12 +39,12 @@ struct SocDoorTcpServer: View {
             Form {
                 Button(action: {
                     if self.isInterrupted && !self.isInProgress {
-                        SocLogger.debug("SocPingOnePinger: Button: Close")
+                        SocLogger.debug("SocDoorTcpServer: Button: Close")
                         self.presentationMode.wrappedValue.dismiss()
                         return
                     }
                     if self.isInProgress {
-                        SocLogger.debug("SocPingOnePinger: Button: Stop")
+                        SocLogger.debug("SocDoorTcpServer: Button: Stop")
                         self.isInterrupted = true
                         return
                     }
@@ -73,10 +73,10 @@ struct SocDoorTcpServer: View {
                         return
                     }
                     catch {
-                        fatalError("SocDoorServer: \(error)")
+                        fatalError("SocDoorTcpServer: \(error)")
                     }
                     
-                    SocLogger.debug("SocPingOnePinger: Button: Start")
+                    SocLogger.debug("SocDoorTcpServer: Button: Start")
                     self.isInterrupted = false
                     self.isInProgress = true
                     DispatchQueue.global().async {
@@ -165,7 +165,7 @@ struct SocDoorTcpServer: View {
             }
         }
         catch {
-            fatalError("SocDoorServer: \(error)")
+            fatalError("SocDoorTcpServer.healthCheck: \(error)")
         }
         throw SocDoorError.FailedHealthCheck(detail: detail)
     }
@@ -188,7 +188,7 @@ struct SocDoorTcpServer: View {
                 }
             }
             catch {
-                fatalError("SocDoorServer: \(error)")
+                fatalError("SocDoorTcpServer.pollSessions: \(error)")
             }
         }
     }
@@ -261,12 +261,12 @@ struct SocDoorTcpServer: View {
             }
         }
         catch {
-            fatalError("SocDoorServer: \(error)")
+            fatalError("SocDoorTcpServer.newSession: \(error)")
         }
     }
     
     private func relaySession(receiver: Int, sender: Int) {
-        var buffer = Data([UInt8](repeating: 0, count: Int(BUFSIZ)))
+        var buffer = Data([UInt8](repeating: 0, count: 4096))
         let received: Int
         do {
             received = try self.sockets[receiver].recv(data: &buffer, flags: 0)
@@ -289,7 +289,7 @@ struct SocDoorTcpServer: View {
             return
         }
         catch {
-            fatalError("SocDoorServer: \(error)")
+            fatalError("SocDoorTcpServer.relaySession: \(error)")
         }
         
         do {
@@ -312,7 +312,7 @@ struct SocDoorTcpServer: View {
             return
         }
         catch {
-            fatalError("SocDoorServer: \(error)")
+            fatalError("SocDoorTcpServer.relaySession: \(error)")
         }
     }
     
@@ -359,7 +359,7 @@ struct SocDoorTcpServer: View {
                 self.closeSession(index)
             }
             catch {
-                fatalError("SocDoorServer: \(error)")
+                fatalError("SocDoorTcpServer.postSession: \(error)")
             }
         }
         else if self.sockets[index].isWrShutdown && !self.sockets[pairIndex].isRdShutdown {
@@ -371,7 +371,7 @@ struct SocDoorTcpServer: View {
                 self.closeSession(index)
             }
             catch {
-                fatalError("SocDoorServer: \(error)")
+                fatalError("SocDoorTcpServer.postSession: \(error)")
             }
         }
         
@@ -387,7 +387,7 @@ struct SocDoorTcpServer: View {
                 self.stats.error += 1
             }
             catch {
-                fatalError("SocDoorServer: \(error)")
+                fatalError("SocDoorTcpServer.postSession: \(error)")
             }
         }
     }
@@ -509,7 +509,6 @@ fileprivate struct TcpSessionRow: View {
     
     var body: some View {
         HStack {
-//            Image(systemName: "arrow.left.and.right")
             Image(systemName: "arrow.left.arrow.right")
                 .resizable()
                 .scaledToFit()

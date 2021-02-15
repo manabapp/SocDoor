@@ -52,7 +52,7 @@ struct SocDoorConfiguration: View {
                         footer: object.appSettingDescription ? Text("Footer_FRONT-END").font(.system(size: 12)) : nil) {
                     HStack {
                         Text("Label_IP_address")
-                            .frame(width: 110, alignment: .leading)
+                            .frame(width: 130, alignment: .leading)
                         Text(stringFrontAddr.isEmpty ? "N/A" : stringFrontAddr)
                             .foregroundColor(Color.init(stringFrontAddr.isEmpty ? UIColor.systemGray: UIColor.label))
                         Spacer()
@@ -74,7 +74,7 @@ struct SocDoorConfiguration: View {
                     }
                     HStack {
                         Text("Label_Port_number")
-                            .frame(width: 110, alignment: .leading)
+                            .frame(width: 130, alignment: .leading)
                         switch protocolIndex {
                         case Self.protocolTCP:
                             TextField("80", text: $stringFrontPort)
@@ -95,7 +95,7 @@ struct SocDoorConfiguration: View {
                     NavigationLink(destination: SocDoorFilterManager()) {
                         HStack {
                             Text("Label_Allow_address")
-                                .frame(width: 110, alignment: .leading)
+                                .frame(width: 130, alignment: .leading)
                             VStack(alignment: .leading, spacing: 1) {
                                 if object.hasActiveFilter {
                                     ForEach(0 ..< object.filters.count, id: \.self) { i in
@@ -117,7 +117,7 @@ struct SocDoorConfiguration: View {
                         NavigationLink(destination: EmptyView()) {
                             HStack {
                                 Text("Label_Certificate")
-                                    .frame(width: 110, alignment: .leading)
+                                    .frame(width: 130, alignment: .leading)
                                 VStack(alignment: .leading, spacing: 1) {
                                     Text("N/A")
                                 }
@@ -141,7 +141,7 @@ struct SocDoorConfiguration: View {
                         footer: object.appSettingDescription ? Text("Footer_BACK-END").font(.system(size: 12)) : nil) {
                     HStack {
                         Text("Label_IP_address")
-                            .frame(width: 110, alignment: .leading)
+                            .frame(width: 130, alignment: .leading)
                         TextField("", text: $stringBackAddr)
                             .keyboardType(.decimalPad)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -184,7 +184,7 @@ struct SocDoorConfiguration: View {
                     }
                     HStack {
                         Text("Label_Port_number")
-                            .frame(width: 110, alignment: .leading)
+                            .frame(width: 130, alignment: .leading)
                         switch protocolIndex {
                         case Self.protocolTCP:
                             TextField("80", text: $stringBackPort)
@@ -220,6 +220,7 @@ struct SocDoorConfiguration: View {
                             EmptyView()
                         }
                         Button(action: {
+                            SocLogger.debug("SocDoorConfiguration: Button: Open")
                             frontAddress.addr = self.stringFrontAddr
                             frontAddress.port = UInt16(self.stringFrontPort)!
                             object.doorSettingFrontPort = Int(frontAddress.port)
@@ -269,7 +270,7 @@ struct SocDoorConfiguration: View {
         let data = Data(bytes: &echo, count: ICMP_HDRLEN)
         _ = try socket.sendto(data: data, flags: 0, address: self.object.hotspot.broadcast)
         
-        var buffer = Data([UInt8](repeating: 0, count: Int(BUFSIZ)))
+        var buffer = Data([UInt8](repeating: 0, count: 4096))
         let lastDate = Date()
         while true {
             let elapsedMsec = Int32(Date().timeIntervalSince(lastDate) * 1000.0)
@@ -316,9 +317,6 @@ struct SocDoorConfiguration: View {
         guard stringFrontAddr.isValidIPv4Format else {
             return NSLocalizedString("Message_InvalidIpAddr", comment: "")
         }
-        guard stringFrontAddr != "0.0.0.0" else {
-            return NSLocalizedString("Message_CantUseIpAddr", comment: "")
-        }
         guard !stringFrontPort.isEmpty else {
             return NSLocalizedString("Message_NoValue", comment: "")
         }
@@ -356,9 +354,6 @@ struct SocDoorConfiguration: View {
             return false
         }
         guard stringFrontAddr.isValidIPv4Format else {
-            return false
-        }
-        guard stringFrontAddr != "0.0.0.0" else {
             return false
         }
         guard !stringFrontPort.isEmpty else {
