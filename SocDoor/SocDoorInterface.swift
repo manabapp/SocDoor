@@ -112,14 +112,5 @@ struct SocDoorInterface {
             }
             ifaPtr = ifa.ifa_next
         }
-        
-        if self.isActive {
-            if self.deviceType == Self.deviceTypeLoopback {
-                self.inet.hostName = "localhost"
-            }
-            else {
-                try! self.inet.resolveHostName()
-            }
-        }
     }
 }
